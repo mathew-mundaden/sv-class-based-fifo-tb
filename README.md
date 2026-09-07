@@ -12,7 +12,6 @@ flowchart LR
                 COV["Coverage"]
 
                 GEN -->|mailbox| DRV
-                DRV -.->|ref_tx| SCB
                 MON -->|mailbox| SCB
                 MON -->|sample| COV
             end
@@ -26,7 +25,6 @@ flowchart LR
         INTF -->|observed| MON
     end
 ```
-
 Custom (non-UVM) SystemVerilog testbench for a parameterized synchronous FIFO — constrained-random stimulus, self-checking scoreboard, and functional coverage.
 
 ## Data flow
