@@ -89,3 +89,7 @@ tb/
 ```
 
 Coverage involves `full`, `empty`, `wr_en`, and `rd_en`, as well as the intersection of `wr_en` and `rd_en` to prove that both read and write operations indeed took place. Present coverage stands at 90%. The rest is the coverage gap that resides in the most challenging individual states (`full` on 16-deep FIFO with purely random input is an extremely unlikely event) — addressing it would entail `dist`-based constraints on writing operations.
+
+**Waveform in EPWave:**
+
+![FIFO Waveform](waveforms/waveform.png)
