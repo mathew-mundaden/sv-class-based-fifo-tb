@@ -60,7 +60,7 @@ tb/
   scoreboard.sv
   coverage.sv
   environment.sv
-  testbench.sv
+  tb_top.sv
 ```
 
 ## Run
