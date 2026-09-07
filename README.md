@@ -1,8 +1,35 @@
 # SystemVerilog FIFO Verification Testbench
 
+```mermaid
+flowchart LR
+    subgraph Top ["tb_top"]
+        subgraph Test ["Test"]
+            subgraph Env ["Env"]
+                GEN["Generator"]
+                DRV["Driver"]
+                MON["Monitor"]
+                SCB["Scoreboard"]
+                COV["Coverage"]
+
+                GEN -->|mailbox| DRV
+                DRV -.->|ref_tx| SCB
+                MON -->|mailbox| SCB
+                MON -->|sample| COV
+            end
+        end
+
+        INTF["Interface"]
+        DUT["sync_fifo (DUT)"]
+
+        DRV -->|drives| INTF
+        INTF <--> DUT
+        INTF -->|observed| MON
+    end
+```
+
 Custom (non-UVM) SystemVerilog testbench for a parameterized synchronous FIFO — constrained-random stimulus, self-checking scoreboard, and functional coverage.
 
-## Architecture
+## Data flow
 
 ```mermaid
 flowchart LR
