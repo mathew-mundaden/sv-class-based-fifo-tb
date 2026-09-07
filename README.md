@@ -69,7 +69,7 @@ tb/
 - Design pane: `rtl/sync_fifo.sv`
 - Testbench pane: `tb/*.sv`, included via `tb_top.sv`
 - Compile: `-timescale 1ns/1ns -sysv`
-- Run: `-access +rw -seed 12345` (fixed seed, so the results below are reproducible)
+- Run: `-access +rw -seed 12345 -coverage all` (fixed seed, so the results below are reproducible)
 
 ## Results
 
